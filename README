@@ -1,3 +1,4 @@
+## My Dotfiles
 These are my configuarion files for some of the Linux programs that I use.
 
 They are here for availability and backing up.
@@ -11,7 +12,7 @@ They are here for availability and backing up.
 * nvim
 * redshift
 
-#### Programs not configured but used in i3/conf
+#### Programs not configured but used in i3 config
 * xfce4-terminal
 * dmenu
 * maim
