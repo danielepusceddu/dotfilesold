@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script starts entr to modify my xfce4 terminal config every time pywal runs.
+# I made this to avoid my terminal colors being reset by programs such as ncmpcpp.
+# It is here because i3 runs it at startup.
+sed "s/^ColorPalette=.*/ColorPalette=$(cat $HOME/.cache/wal/colors | tr '\n' ';')/m" -i $HOME/.config/xfce4/terminal/terminalrc

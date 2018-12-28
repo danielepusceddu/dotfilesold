@@ -1,0 +1,38 @@
+separator_block_width=25
+
+[music]
+label=♪
+command=mpc current
+interval=10
+
+[volume]
+command=$HOME/.config/i3blocks/scripts/volume
+#LABEL=♪ 
+label=🔊
+interval=once
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+
+[bandwidth]
+command=$HOME/.config/i3blocks/scripts/bandwidth | sed "s/IN/IN⬇️/" | sed "s/OUT/OUT⬆️/"
+interval=5
+
+[iface]
+command=$HOME/.config/i3blocks/scripts/iface
+#LABEL=wlan0:
+#IFACE=wlan0
+#ADDRESS_FAMILY=inet6?
+color=#00FF00
+interval=60
+
+[memory]
+command=$HOME/.config/i3blocks/scripts/memory
+label=MEM
+interval=30
+
+[time]
+label=
+command=date '+%a %d-%m-%Y %H:%M:%S'
+interval=1

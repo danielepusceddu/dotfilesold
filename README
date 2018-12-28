@@ -1,0 +1,20 @@
+These are my configuarion files for some of the Linux programs that I use.
+
+They are here for availability and backing up.
+
+#### Programs Configured
+* bash
+* compton
+* i3, i3blocks
+* mpd, ncmpcpp
+* mpv
+* nvim
+* redshift
+
+#### Programs not configured but used in i3/conf
+* xfce4-terminal
+* dmenu
+* maim
+* amixer
+* pywal
+* entr

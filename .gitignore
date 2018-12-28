@@ -1,0 +1,6 @@
+# Ignore log file
+.config/ncmpcpp/error.log
+
+# Ignore mpd directory except for its conf
+.config/mpd/*
+!.config/mpd/mpd.conf
