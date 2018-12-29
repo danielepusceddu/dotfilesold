@@ -10,12 +10,16 @@ They are here for availability and backing up.
 * mpd, ncmpcpp
 * mpv
 * nvim
+* ranger
 * redshift
+* sxiv
 
-#### Programs not configured but used in i3 config
+#### Programs not configured but used in the config files
 * xfce4-terminal
 * dmenu
 * maim
 * amixer
 * pywal
 * entr
+* exiv2
+* xclip

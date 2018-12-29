@@ -1,0 +1,8 @@
+#!/bin/sh
+while read file; do
+    case "$1" in
+
+    # Copy path to image
+    "C-c") echo -n $(echo $file | sed "s@\.@$PWD@") | xclip -selection clipboard ;;
+    esac
+done
