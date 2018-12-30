@@ -138,6 +138,9 @@ export VISUAL=nvim
 #Default Terminal
 export TERMCMD="xfce4-terminal"
 
+# cd just by typing dir name
+shopt -s autocd
+
 #My Aliases
 alias randcow="cowsay -f \$(ls /usr/share/cowsay/cows/ | shuf -n 1)"
 alias setCC="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
