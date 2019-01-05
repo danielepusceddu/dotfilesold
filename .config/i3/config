@@ -189,6 +189,9 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -R
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 
+# Pause / Unpause mpd
+bindsym $mod+p exec --no-startup-id $HOME/.config/i3/toggleMusic
+
 # Make mpv float by default
 for_window [class="mpv"] floating enable
 for_window [class="test"] floating enable

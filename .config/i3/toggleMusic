@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$(mpc status | sed "2q;d" | grep "^\[playing\]")" ]; then
+    mpc pause
+else
+    mpc play
+fi
