@@ -60,3 +60,21 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+
+class fmark(Command):
+    """:fmark <regex1> [<regex2> [<regex3> ... ]]
+    Mark all files in the arguments.
+    """
+
+    def execute(self):
+        if not self.arg(1):
+            self.fm.notify(':fmark <regex1> [<regex2> [<regex3> ... ]]', bad=True)
+            return
+        else:
+            regex = ''
+            for arg in self.args[:-1]:
+                regex += arg + '|'
+            regex += self.args[-1]
+            self.fm.execute_console('scout -mr ' + regex)
+
