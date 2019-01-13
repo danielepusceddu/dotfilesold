@@ -2,14 +2,27 @@
 while read -r file; do
     case "$1" in
 
-    # Copy path to image
+    # Copy filename
+    "C-x")
+        filename=$(echo "$file" | sed s@.*/@@)
+        paths="$paths"\ "$filename"
+    ;;
+
+    # (attempt to) Copy absolute path to image
     "C-c")
         path=$(echo -n "$file" | sed "s@^\.@$PWD@")
 
         if [ -z  "$(echo -n "$path" | grep /)" ]; then
             path=$PWD/$path
         fi
-
-        echo -n "$path" | xclip -selection clipboard ;;
+        paths="$paths"\ "$path"
+    ;;
     esac
 done
+
+case "$1" in
+    "C-c")
+        echo -n "$paths" | sed s@^\ @@ | xclip -selection clipboard ;;
+    "C-x")
+        echo -n "$paths" | sed s@^\ @@ | xclip -selection clipboard ;;
+esac
