@@ -82,7 +82,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# Disable stacking keybind to make place for mpc stop
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -192,6 +193,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill
 
 # Pause / Unpause mpd
 bindsym $mod+p exec --no-startup-id $HOME/.config/i3/toggleMusic
+
+# Stop playing music
+bindsym $mod+s exec --no-startup-id mpc stop
 
 # Make mpv float by default
 for_window [class="mpv"] floating enable
