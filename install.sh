@@ -1,15 +1,13 @@
 #!/bin/bash
 
-for F in .*; do
-	if [ ! -d "$F" ]; then
-		eval 'ln -s "$PWD/$F" $HOME/$F'
-		#echo $F
-	fi
+shopt -s dotglob
+for F in home/[.]*; do
+	ln -s "$PWD/$F" "$HOME/"
 done
+shopt -u dotglob
 
 
 for F in .config/*; do
 	sym="$HOME/.config/"
-	#echo $sym
-	eval 'ln -s "$PWD/$F" $sym'
+	ln -s "$PWD/$F" "$HOME/.config/"
 done
