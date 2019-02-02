@@ -1,0 +1,2 @@
+#!/bin/bash
+wal "$@" && $HOME/.config/i3/xfce4wal

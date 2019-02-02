@@ -167,10 +167,9 @@ bar {
 hide_edge_borders both
 
 # My start-up programs
-exec --no-startup-id echo $HOME/.cache/wal/colors | entr -s "$HOME/.config/i3/xfce4wal"
 exec --no-startup-id redshift
 exec --no-startup-id compton
-exec --no-startup-id wal -i $(xdg-user-dir PICTURES)/Wallpapers/
+exec --no-startup-id $HOME/.config/scripts/pwal -i $(xdg-user-dir PICTURES)/Wallpapers/
 #exec --no-startup-id feh --recursize --randomize --bg-scale ~/Pictures/Wallpapers
 
 # Connect to internet
@@ -201,6 +200,7 @@ bindsym $mod+s exec --no-startup-id mpc stop
 for_window [class="mpv"] floating enable
 for_window [class="PCSX2"] floating enable
 for_window [class="test"] floating enable
+for_window [class="Chip8"] floating enable
 
 # Hide bars for i3-gaps
 for_window [class="^.*"] border pixel 2
