@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Background
+color=$(sed -n 1p "$HOME"/.cache/wal/colors)
+toReplace="^background.*"
+rgb=$(printf "%d %d %d\n" 0x${color:1:2} 0x${color:3:2} 0x${color:5:2})
+replacement="background=rgba("$(echo $rgb | sed s/\ /,\ /g)", 0.8)"
+#replacement="background=rgba(0, 0, 0, 0.8)"
+sed -i -r "s@$toReplace@$replacement@g" "$HOME"/.config/termite/config
+
+# Color 0 - 15
+for i in {0..15}; do
+    plusOne=$(( i+1 ))
+    color=$(sed -n "$plusOne"p "$HOME"/.cache/wal/colors)
+    toReplace="color$i=.*"
+    replacement="color$i=$color"
+    sed -i -r "s@$toReplace@$replacement@" "$HOME"/.config/termite/config
+done
+
+

@@ -136,7 +136,7 @@ export PATH="$PATH:$HOME/.config/scripts"
 export VISUAL=nvim
 
 #Default Terminal
-export TERMCMD="xfce4-terminal"
+export TERMCMD="termite"
 
 # cd just by typing dir name
 shopt -s autocd

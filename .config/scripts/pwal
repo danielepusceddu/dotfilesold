@@ -1,2 +1,5 @@
 #!/bin/bash
-wal "$@" && $HOME/.config/i3/xfce4wal
+wal "$@" 
+$HOME/.config/scripts/xfce4wal 
+$HOME/.config/scripts/wal2termite
+
