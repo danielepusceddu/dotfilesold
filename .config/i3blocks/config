@@ -8,7 +8,7 @@ interval=10
 [volume]
 command=$HOME/.config/i3blocks/scripts/volume
 #LABEL=♪ 
-label=🔊
+#label=🔊
 interval=once
 signal=10
 #STEP=5%
@@ -16,7 +16,7 @@ signal=10
 #SCONTROL=[determined automatically]
 
 [bandwidth]
-command=$HOME/.config/i3blocks/scripts/bandwidth | sed "s/IN/IN⬇️/" | sed "s/OUT/OUT⬆️/"
+command=$HOME/.config/i3blocks/scripts/bandwidth #| sed "s/IN/IN⬇️/" | sed "s/OUT/OUT⬆️/"
 interval=5
 
 [iface]
@@ -33,6 +33,6 @@ label=MEM
 interval=30
 
 [time]
-label=
+#label=
 command=date '+%a %d-%m-%Y %H:%M:%S'
 interval=1
