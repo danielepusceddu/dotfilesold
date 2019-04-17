@@ -146,6 +146,9 @@ alias randcow="cowsay -f \$(ls /usr/share/cowsay/cows/ | shuf -n 1)"
 alias setCC="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
 alias termvid="mpv --vo=tct"
 alias rback="rsync -r --progress -v -a -s --delete"
+alias pacup="sudo pacman -Syu"
+alias pacrm="sudo pacman -Rns"
+alias pacget="sudo pacman -S"
 #alias godsword="echo $(shuf -n 10 /usr/share/dict/words  --random-source=/dev/urandom | tr '\n' ' ')"
 
 # Tell me more
