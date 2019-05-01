@@ -15,6 +15,13 @@ signal=10
 #MIXER=[determined automatically]
 #SCONTROL=[determined automatically]
 
+#[battery]
+#command=$HOME/.config/i3blocks/scripts/battery
+#interval=30
+#label=BAT
+##LABEL=⚡
+##BAT_NUMBER=0
+
 [bandwidth]
 command=$HOME/.config/i3blocks/scripts/bandwidth #| sed "s/IN/IN⬇️/" | sed "s/OUT/OUT⬆️/"
 interval=5
