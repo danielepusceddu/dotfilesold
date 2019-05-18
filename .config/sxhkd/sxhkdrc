@@ -1,0 +1,29 @@
+# Full screenshot
+Print
+    maim > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+
+# Select screenshot
+control + Print
+    maim -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+
+# Window screenshot
+shift + Print
+    maim -i $(xdotool getactivewindow) > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+
+# Pause / Unpause mpd music
+super + p
+    mpc toggle
+
+# Stop mpd music
+super + s
+    mpc stop
+
+# Volume control
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks 
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks 
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks 

@@ -167,49 +167,21 @@ bar {
 # Hide borders adjacent to screen edge
 hide_edge_borders both
 
-# My start-up programs
-exec --no-startup-id redshift
-exec --no-startup-id compton
-exec --no-startup-id $HOME/.config/scripts/pwal -i $(xdg-user-dir PICTURES)/Wallpapers/
-#exec --no-startup-id feh --recursize --randomize --bg-scale ~/Pictures/Wallpapers
-
-# Connect to internet
-# exec --no-startup-id nm-applet
-
-#Print Screen
-bindsym Print exec maim > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
-bindsym --release Control+Print exec maim -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
-bindsym --release Shift+Print exec maim -i $(xdotool getactivewindow) > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
-
-# Pulse Audio controls with i3blocks support
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks 
-
-# i3blocks volume
-#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
-#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-#bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
-
-# Pause / Unpause mpd
-bindsym $mod+p exec --no-startup-id $HOME/.config/i3/toggleMusic
-
-# Stop playing music
-bindsym $mod+s exec --no-startup-id mpc stop
-
 # Make mpv float by default
 for_window [class="mpv"] floating enable
 for_window [class="PCSX2"] floating enable
 for_window [class="test"] floating enable
 for_window [class="Chip8"] floating enable
 
+#############
+#COMMENT EVERYTHING BELOW FOR A SIMPLER i3 WITHOUT GAPS
+#############
 # Hide bars for i3-gaps
 for_window [class="^.*"] border pixel 2
 
 # Gaps
 gaps inner 20
 gaps outer 0
-
 
 # Set Colors from Xresources
 # For pywal
