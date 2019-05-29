@@ -1,5 +1,5 @@
 #!/bin/bash
 wal "$@" 
-$HOME/.config/scripts/xfce4wal 
+$HOME/.config/scripts/wal2xfce
 $HOME/.config/scripts/wal2termite
 
