@@ -1,3 +1,11 @@
+# Spawn terminal
+super + Return
+    termite
+
+# Run dmenu
+super + d
+    dmenu_run
+
 # Full screenshot
 Print
     maim > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
