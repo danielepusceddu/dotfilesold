@@ -61,6 +61,16 @@ awful.layout.layouts = {
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Volume widget settings
+volume_control = require("volume-control")
+volumecfg = volume_control{
+    device="pulse",
+    widget_text = {
+        on  = 'Vol: %3d%% ',        -- three digits, fill with leading spaces
+        off = 'Vol: %3dM ',
+    },
+}
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -105,12 +115,16 @@ awful.screen.connect_for_each_screen(function(s)
 
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-	    require("battery-widget") {
-	   	widget_font = beautiful.font
-	    },
-            wibox.widget.systray(),
-            mytextclock,
-        },
+            spacing = 5,
+
+            volumecfg.widget,
+            
+            require("battery-widget") {
+                widget_font = beautiful.font
+            },
+                wibox.widget.systray(),
+                mytextclock,
+            },
     }
 end)
 
