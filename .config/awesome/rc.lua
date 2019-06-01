@@ -45,7 +45,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.font = "DejaVu Sans 10"
+beautiful.font = "DejaVu Sans 11"
 
 -- Default modkey.
 modkey = "Mod4"
@@ -105,6 +105,9 @@ awful.screen.connect_for_each_screen(function(s)
 
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+	    require("battery-widget") {
+	   	widget_font = beautiful.font
+	    },
             wibox.widget.systray(),
             mytextclock,
         },
@@ -335,7 +338,8 @@ awful.rules.rules = {
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
-                     titlebars_enabled = false
+                     titlebars_enabled = false,
+		             size_hints_honor = false
      }
     },
 
