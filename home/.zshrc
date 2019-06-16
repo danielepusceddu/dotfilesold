@@ -10,6 +10,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+[ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || 
+    eval $(dircolors -b)
 
 #My ENV .
 dot=$HOME"/.dotfiles"
@@ -30,12 +32,16 @@ export TERMCMD="termite"
 
 #My Aliases
 alias randcow="cowsay -f \$(ls /usr/share/cowsay/cows/ | shuf -n 1)"
+alias sxiv="sxiv -a"
 alias setCC="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
 alias termvid="mpv --vo=tct"
 alias rback="rsync -r --progress -v -a -s --delete"
 alias pacup="sudo pacman -Syu"
 alias pacrm="sudo pacman -Rns"
 alias pacget="sudo pacman -S"
+alias pacinf="pacman -Si"
+alias pacsearch="pacman -Ss"
+
 alias vi="nvim"
 #alias godsword="echo $(shuf -n 10 /usr/share/dict/words  --random-source=/dev/urandom | tr '\n' ' ')"
 
