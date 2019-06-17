@@ -8,15 +8,15 @@ super + d
 
 # Full screenshot
 Print
-    maim > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+    maim --hidecursor > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
 
 # Select screenshot
 control + Print
-    maim -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+    maim --hidecursor -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
 
 # Window screenshot
 shift + Print
-    maim -i $(xdotool getactivewindow) > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+    maim --hidecursor -i $(xdotool getactivewindow) > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
 
 # Pause / Unpause mpd music
 super + p
