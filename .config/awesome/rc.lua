@@ -120,11 +120,12 @@ awful.screen.connect_for_each_screen(function(s)
             volumecfg.widget,
             
             require("battery-widget") {
+                widget_text = "${AC_BAT}${color_on}${percent}%${color_off}",
                 widget_font = beautiful.font
             },
-                wibox.widget.systray(),
-                mytextclock,
-            },
+            wibox.widget.systray(),
+            mytextclock,
+        },
     }
 end)
 
@@ -344,7 +345,7 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
+      properties = { border_width = 2,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
