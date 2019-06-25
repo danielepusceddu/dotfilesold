@@ -13,44 +13,15 @@ compinit
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || 
     eval $(dircolors -b)
 
-#My ENV .
-dot=$HOME"/.dotfiles"
-hdd="/mnt/Reborn"
-prog=$hdd"/Programming"
-anime=$hdd"/Videos/Anime"
-youtube=$hdd"/Videos/Youtube"
-screens=$hdd"/Images/Screenshots"
+# Alias definitions.
+if [ -f ~/.aliases ]; then
+    source $HOME/.aliases
+fi
 
-#Modifying PATH
-export PATH="$PATH:$HOME/.config/scripts"
-
-#Default Editor
-export VISUAL=nvim
-
-#Default Terminal
-export TERMCMD="termite"
-
-#My Aliases
-alias randcow="cowsay -f \$(ls /usr/share/cowsay/cows/ | shuf -n 1)"
-alias sxiv="sxiv -a"
-alias setCC="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
-alias termvid="mpv --vo=tct"
-alias rback="rsync -r --progress -v -a -s --delete"
-alias pacup="sudo pacman -Syu"
-alias pacrm="sudo pacman -Rns"
-alias pacget="sudo pacman -S"
-alias pacinf="pacman -Si"
-alias pacsearch="pacman -Ss"
-
-alias vi="nvim"
-#alias godsword="echo $(shuf -n 10 /usr/share/dict/words  --random-source=/dev/urandom | tr '\n' ' ')"
-
-# Tell me more
-alias mkdir='mkdir -v'
-alias mv='mv -v'
-alias rm='rm -v'
-alias cp='cp -v'
-alias tar='tar -v'
+# ENV definitions.
+if [ -f ~/.env ]; then
+    source $HOME/.env
+fi
 
 # Pywal. I don't need these, I modify my terminal's config instead.
 # Import colorscheme from 'wal' asynchronously

@@ -100,15 +100,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -120,43 +111,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-#My ENV .
-dot=$HOME"/.dotfiles"
-hdd="/mnt/Reborn"
-prog=$hdd"/Programming"
-anime=$hdd"/Videos/Anime"
-youtube=$hdd"/Videos/Youtube"
-screens=$hdd"/Images/Screenshots"
-
-#Modifying PATH
-export PATH="$PATH:$HOME/.config/scripts"
-
-#Default Editor
-export VISUAL=nvim
-
-#Default Terminal
-export TERMCMD="termite"
-
 # cd just by typing dir name
 shopt -s autocd
 
-#My Aliases
-alias randcow="cowsay -f \$(ls /usr/share/cowsay/cows/ | shuf -n 1)"
-alias setCC="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
-alias termvid="mpv --vo=tct"
-alias rback="rsync -r --progress -v -a -s --delete"
-alias pacup="sudo pacman -Syu"
-alias pacrm="sudo pacman -Rns"
-alias pacget="sudo pacman -S"
-#alias godsword="echo $(shuf -n 10 /usr/share/dict/words  --random-source=/dev/urandom | tr '\n' ' ')"
+# Alias definitions.
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
 
-# Tell me more
-alias mkdir='mkdir -v'
-alias mv='mv -v'
-alias rm='rm -v'
-alias cp='cp -v'
-alias tar='tar -v'
+# ENV definitions.
+if [ -f ~/.env ]; then
+    . ~/.env
+fi
 
 # Pywal. I don't need these, I modify my terminal's config instead.
 # Import colorscheme from 'wal' asynchronously
