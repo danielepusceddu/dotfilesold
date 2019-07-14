@@ -12,7 +12,7 @@ start_dwm () {
     exec dwm
 }
 
-redshift&
+#redshift&
 compton&
 unclutter --timeout 15&
 $HOME/.config/scripts/pwal -i $(xdg-user-dir PICTURES)/Wallpapers/&
