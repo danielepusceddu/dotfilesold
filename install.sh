@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git submodule update --init --recursive
+
 shopt -s dotglob
 for F in home/[.]*; do
 	ln -s "$PWD/$F" "$HOME/"
