@@ -2,16 +2,27 @@ let mapleader = "\<Space>"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'kien/ctrlp.vim'
-call vundle#end()            " required
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+call plug#end()            " required
 filetype plugin indent on    " required
+
+" Coc
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 " easymotion
 let g:EasyMotion_smartcase = 1
@@ -33,6 +44,7 @@ set expandtab   "Expand tabs as spaces
 set number relativenumber
 
 " Buffer switching
+set hidden
 nmap <tab> :bnext<CR>
 nmap <S-tab> :bprev<CR>
 
