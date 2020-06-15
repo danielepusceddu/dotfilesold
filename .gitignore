@@ -1,6 +1,9 @@
 # Ignore log file
 .config/ncmpcpp/error.log
 
+# Ignore dotfiles to avoid recursion problems
+.dotfiles
+
 # Ignore mpd directory except for its conf
 .config/mpd/*
 !.config/mpd/mpd.conf

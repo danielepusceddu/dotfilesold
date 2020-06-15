@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# dotfiles repo alias
+alias dotfiles='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 #My Aliases
 alias s="sudo"
 alias sxiv="sxiv-rifle"
