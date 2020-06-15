@@ -1,6 +1,11 @@
 #!/bin/sh
 
 #My Aliases
+alias s="sudo"
+alias sxiv="sxiv-rifle"
+alias ls="ls --color=never"
+alias lsd="ls -d */"
+alias ydl="youtube-dl"
 alias randcow="cowsay -f \$(ls /usr/share/cowsay/cows/ | shuf -n 1)"
 alias sxiv="sxiv -a"
 alias setCC="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
@@ -11,7 +16,8 @@ alias pacrm="sudo pacman -Rns"
 alias pacget="sudo pacman -Syu; sudo pacman -S"
 alias pacinf="pacman -Si"
 alias pacsearch="pacman -Ss"
-
+alias ida64="wine ${HOME}/ctf/ida7.2/ida64.exe"
+alias ida="wine ${HOME}/ctf/ida7.0/ida.exe"
 alias vi="nvim"
 #alias godsword="echo $(shuf -n 10 /usr/share/dict/words  --random-source=/dev/urandom | tr '\n' ' ')"
 
