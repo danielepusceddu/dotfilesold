@@ -1,0 +1,2 @@
+wine ${HOME}/ctf/ida7.0/ida.exe "$@"
+

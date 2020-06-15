@@ -16,8 +16,6 @@ alias pacrm="sudo pacman -Rns"
 alias pacget="sudo pacman -Syu; sudo pacman -S"
 alias pacinf="pacman -Si"
 alias pacsearch="pacman -Ss"
-alias ida64="wine ${HOME}/ctf/ida7.2/ida64.exe"
-alias ida="wine ${HOME}/ctf/ida7.0/ida.exe"
 alias vi="nvim"
 #alias godsword="echo $(shuf -n 10 /usr/share/dict/words  --random-source=/dev/urandom | tr '\n' ' ')"
 
