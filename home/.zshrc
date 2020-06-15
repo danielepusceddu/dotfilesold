@@ -1,4 +1,22 @@
-# Lines configured by zsh-newuser-install
+# #############################################
+# fzf 
+# #############################################
+
+# fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+# cdf - cd into the directory of the selected file
+fdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000000
