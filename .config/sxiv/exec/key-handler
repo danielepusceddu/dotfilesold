@@ -8,6 +8,10 @@ while read -r file; do
         paths="$paths"\ "$filename"
     ;;
 
+    "C-d")
+        rm "$file"
+    ;;
+
     # (attempt to) Copy absolute path to image
     "C-c")
         path=$(echo -n "$file" | sed "s@^\.@$PWD@")
