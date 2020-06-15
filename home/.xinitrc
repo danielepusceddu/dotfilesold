@@ -18,7 +18,20 @@ unclutter --timeout 15&
 $HOME/.config/scripts/pwal -i $(xdg-user-dir PICTURES)/Wallpapers/&
 sxhkd&
 
-exec awesome
-#start_dwm
-#exec i3
-#exec xmonad
+case $2 in
+    xfce )
+        exec startxfce4
+    ;;
+    xmonad )
+        exec xmonad
+    ;;
+    awesome )
+        exec awesome
+    ;;
+    dwm )
+        start_dwm
+    ;;
+    * )
+        start_dwm
+    ;;
+esac
