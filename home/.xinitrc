@@ -14,10 +14,9 @@ start_dwm () {
     exec dwm
 }
 
-#redshift&
-compton&
-unclutter --timeout 15&
-$HOME/.config/scripts/pwal -i $(xdg-user-dir PICTURES)/Wallpapers/&
+picom&
+unclutter --timeout 5&
+wal -i $(xdg-user-dir PICTURES)/Wallpapers/ -a "80" -o termitewal.sh&
 sxhkd&
 
 case $2 in
