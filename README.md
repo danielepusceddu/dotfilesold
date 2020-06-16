@@ -1,6 +1,12 @@
 ## My Dotfiles
 These are my config files for some of the Linux programs that I use.
 
-They are here for availability and backing up.
+I use the "bare git repository" method: https://www.atlassian.com/git/tutorials/dotfiles
 
-In this repository you will find configurations for programs such as zsh, i3 and awesome wm, neovim, ranger, ncmpcpp and more.
+```
+cd ~
+git clone --bare https://github.com/danielepusceddu/dotfiles.git .dotfiles
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles checkout
+dotfiles config --local status.showUntrackedFiles no
+```
