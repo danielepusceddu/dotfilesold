@@ -9,8 +9,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
+Plug 'gruvbox-community/gruvbox'
+Plug 'sheerun/vim-polyglot'
 call plug#end()            " required
 filetype plugin indent on    " required
+
+" gruvbox
+set termguicolors
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 " Coc
 " use <tab> for trigger completion and navigate to the next complete item

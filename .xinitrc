@@ -14,9 +14,13 @@ start_dwm () {
     exec dwm
 }
 
-picom&
+[ -f ~/.Xresources ] && \
+    xrdb -merge -I$HOME ~/.Xresources
+
+[ -d $(xdg-user-dir PICTURES)/Wallpaperz/ ] && \
+    xwallpaper --zoom $(find $(xdg-user-dir PICTURES)/Wallpapers/ -type f | shuf -n 1)
+
 unclutter --timeout 5&
-wal -i $(xdg-user-dir PICTURES)/Wallpapers/ -a "80" -o termitewal.sh&
 sxhkd&
 
 case $2 in
