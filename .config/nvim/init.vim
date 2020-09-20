@@ -11,6 +11,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sheerun/vim-polyglot'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()            " required
 filetype plugin indent on    " required
 
