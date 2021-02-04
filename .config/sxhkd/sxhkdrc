@@ -20,19 +20,24 @@ Print
 
 # Select screenshot
 control + Print
-    maim --hidecursor -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+    maim --noopengl --hidecursor -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
 
 # Window screenshot
 shift + Print
     maim --hidecursor -i $(xdotool getactivewindow) > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
 
-# Pause / Unpause mpd music
-super + p
+# Music Player controls
+XF86AudioPlay
     mpc toggle
 
-# Stop mpd music
-super + s
+XF86AudioStop
     mpc stop
+
+XF86AudioPrev
+    mpc prev
+
+XF86AudioNext
+    mpc next
 
 # Volume control
 XF86AudioRaiseVolume
@@ -52,3 +57,24 @@ super + F11
 
 super + F10
     pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Simulate mouse right lick
+F1
+    xdotool click 3
+
+# Tablet
+# Xournal Select Region
+button16
+    setxkbmap -option; xdotool key shift+ctrl+g; setxkbmap -option lv5:caps_switch_lock,misc:extend
+
+# Xournal Pen
+button15
+    setxkbmap -option; xdotool key shift+ctrl+p; setxkbmap -option lv5:caps_switch_lock,misc:extend
+
+# Xournal Eraser
+button14
+    setxkbmap -option; xdotool key shift+ctrl+e; setxkbmap -option lv5:caps_switch_lock,misc:extend
+
+# Xournal Hand
+button13
+    setxkbmap -option; xdotool key shift+ctrl+a; setxkbmap -option lv5:caps_switch_lock,misc:extend
