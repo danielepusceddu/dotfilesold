@@ -16,15 +16,15 @@ super + w
 
 # Full screenshot
 Print
-    maim --hidecursor > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+	filename=$(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png; maim --hidecursor > $filename; printf "%s" $filename | xsel -ib
 
 # Select screenshot
 control + Print
-    maim --noopengl --hidecursor -s > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+	filename=$(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png; maim --noopengl --hidecursor -s > $filename; printf "%s" $filename | xsel -ib;
 
 # Window screenshot
 shift + Print
-    maim --hidecursor -i $(xdotool getactivewindow) > $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png
+	filename=$(xdg-user-dir PICTURES)/Screenshots/$(date +%Y_%m_%d-%H_%M_%S).png; maim --hidecursor -i $(xdotool getactivewindow) > $filename; printf "%s" $filename | xsel -ib;
 
 # Music Player controls
 XF86AudioPlay
